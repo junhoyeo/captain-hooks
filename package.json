@@ -1,0 +1,29 @@
+{
+  "name": "captain-hooks",
+  "version": "1.0.0",
+  "description": "collection of custom react hooks",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "types": "./lib/index.d.ts",
+  "repository": "https://github.com/junhoyeo/captain-hooks",
+  "authors": {
+    "name": "JunhoYeo",
+    "email": "hanaro0704@naver.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "compile": "tsc --declarationDir lib && tsc --declarationDir es"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "package.json"
+  ],
+  "peerDependencies": {
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
