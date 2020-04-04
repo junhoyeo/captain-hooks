@@ -3,11 +3,10 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "declaration": true,
-    "emitDeclarationOnly": true,
     "esModuleInterop": true,
     "importHelpers": true,
     "jsx": "react",
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "paths": {
       "@/*": [
@@ -18,15 +17,14 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "esnext"
+    "target": "es5",
+    "outDir": "lib"
   },
   "exclude": [
     "node_modules",
     "lib",
-    "es",
-    "dist",
+    "esm",
     "**/__tests__",
     "**/__test__",
-    "**/demo"
   ]
 }
