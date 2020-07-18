@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 
 export default function useWindowSize(): {
   width: number | undefined,
@@ -6,12 +6,13 @@ export default function useWindowSize(): {
 } {
   const isClient = typeof window === 'object';
 
-  function getSize() {
-    return {
+  const getSize = useCallback(
+    () => ({
       width: isClient ? window.innerWidth : undefined,
       height: isClient ? window.innerHeight : undefined,
-    };
-  }
+    }),
+    [isClient],
+  );
 
   const [windowSize, setWindowSize] = useState(getSize);
 
@@ -28,7 +29,7 @@ export default function useWindowSize(): {
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
     },
-    [],
+    [isClient, getSize],
   );
 
   return windowSize;
