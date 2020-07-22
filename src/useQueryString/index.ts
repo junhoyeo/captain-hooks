@@ -11,13 +11,13 @@ export default function useQueryString(): IQuery {
     return {};
   }
   const queryString = currentLink.split('?')[1];
-  var query: IQuery = {};
-  var pairs = (queryString[0] === '?'
+  let query: IQuery = {};
+  const pairs = (queryString[0] === '?'
     ? queryString.substr(1)
     : queryString
   ).split('&');
-  for (var i = 0; i < pairs.length; i++) {
-    var pair = pairs[i].split('=');
+  for (let pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+    const pair = pairs[pairIndex].split('=');
     query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
   }
   return query;
