@@ -17,6 +17,9 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
+    "lib": [
+      "ESNext"
+    ],
     "target": "es5",
     "outDir": "lib"
   },
